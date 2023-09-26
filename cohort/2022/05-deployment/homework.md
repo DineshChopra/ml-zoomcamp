@@ -23,7 +23,7 @@
 * What's the version of pipenv you installed?
 * Use `--version` to find out
 
-### Answer: 2023.6.2
+> **Answer** `2023.6.2`
 
 ## Question 2
 
@@ -33,7 +33,7 @@
 Note: you should create an empty folder for homework
 and do it there. 
 
-### `pipenv install Scikit-Learn==1.0.2`
+### pipenv install Scikit-Learn==1.0.2
 > **First Hash is** `sha256:08ef968f6b72033c16c479c966bf37ccd49b06ea91b765e1cc27afefe723920b`
 
 ## Models
@@ -86,7 +86,7 @@ What's the probability that this client will get a credit card?
 * 0.601
 * 0.993
 
-> Answer: 0.162
+> **Answer** `0.162`
 
 If you're getting errors when unpickling the files, check their checksum:
 
@@ -118,6 +118,7 @@ What's the probability that this client will get a credit card?
 * 0.698
 * 0.928
 
+> **Answer** `0.928`
 
 ## Docker
 
