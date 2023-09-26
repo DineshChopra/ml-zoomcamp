@@ -156,6 +156,7 @@ So what's the size of this base image?
 
 You can get this information when running `docker images` - it'll be in the "SIZE" column.
 
+> **Answer** `125 Mb`
 
 ## Dockerfile
 
@@ -175,7 +176,10 @@ Now complete it:
 * Run it with Gunicorn 
 
 After that, you can build your docker image.
-
+```docker
+docker build -t fraud-detector .
+docker run -it -p 9696:9696 fraud-detector:latest
+```
 
 ## Question 6
 
@@ -196,7 +200,7 @@ What's the probability that this client will get a credit card now?
 * 0.769
 * 0.972
 
-
+> **Answer** `0.9282218018527452`, So most matching is last option
 ## Submit the results
 
 * Submit your results here: https://forms.gle/jU2we8f9WeLgX3qa6
