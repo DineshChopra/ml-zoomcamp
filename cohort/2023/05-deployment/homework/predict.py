@@ -2,10 +2,13 @@ import pickle
 
 from flask import Flask, request, jsonify
 
-model_file = 'model1.bin'
+# model_file = 'model1.bin'
+model_file = 'model2.bin' # This is used in docker image Question 6
 preprocess_file = "dv.bin"
 
 app = Flask("Bank Credit Scoring")
+model = None
+dv = None
 
 def load_model():
   global model
@@ -28,6 +31,8 @@ def predict():
   }
   return jsonify(result)
 
+
+load_model()
+
 if __name__ == "__main__":
-  load_model()
   app.run(debug=True, host="0.0.0.0", port=9696)
