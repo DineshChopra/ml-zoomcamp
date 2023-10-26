@@ -12,11 +12,19 @@ Reference project: https://github.com/bhasarma/mlcoursezoom-camp/tree/main/WK08-
 * 6. Put your model into a web service and deploy it locally with Docker
 * 7. Deploying the service to the cloud
 
-
+## Install dependencies
+```
+pipenv install
+pipenv shell
+```
+## Train best model
+```
+python train.py
+```
 
 ## Build docker image [ref](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/05-deployment/06-docker.md)
 ```
-docker build -t bank-term-deposite .
+docker build -t bank-term-deposite:latest .
 ```
 
 ## To run it, execute the command below.

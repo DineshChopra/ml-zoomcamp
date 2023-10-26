@@ -8,7 +8,7 @@ from flask import jsonify
 model_file = 'artifacts/model.bin'
 
 with open(model_file, 'rb') as f_in:
-  pipeline = pickle.load(f_in)
+  model = pickle.load(f_in)
 
 app = Flask('Term_Deposite_Prediction')
 
@@ -25,13 +25,14 @@ def predict():
   customer = request.get_json()
 
   customer = remove_not_required_fields(customer) 
+  print("customer ---- ", customer)
 
-  y_pred = pipeline.predict_proba(customer)[0, 1]
+  y_pred = model.predict_proba(customer)[0, 1]
+  print("prediction --- ", y_pred)
 
   result = {
     'term_deposite_prediction': float(y_pred),
   }
-
   return jsonify(result)
 
 
