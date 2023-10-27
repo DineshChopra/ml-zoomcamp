@@ -8,6 +8,8 @@ scikit-learn = "*"
 flask = "*"
 gunicorn = "*"
 pandas = "*"
+xgboost = "*"
+imblearn = "*"
 
 [dev-packages]
 

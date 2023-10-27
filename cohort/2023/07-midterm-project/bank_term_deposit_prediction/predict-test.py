@@ -32,19 +32,21 @@ response = requests.post(url, json=customer_not_takinig_term_deposit).json()
 print(response)
 
 
+
+# 59.0	admin.	married	secondary	2343.0	yes	no	unknown	5	may	1042	1	-1	0	unknown
 customer_takinig_term_deposit = {
-  "age": 48.0,
-  "job": "services",
+  "age": 60.0,
+  "job": "admin.",
   "marital": "married",
   "education": "secondary",
-  "balance": 22.0,
-  "housing": "no",
-  "loan": "no",
-  "contact": "cellular",
-  "day": 2,
-  "month": "feb",
-  "duration": 429,
-  "campaign": 2,
+  "balance": 2400.0,
+  "housing": "yes",
+  "loan": "yes",
+  "contact": "unknown",
+  "day": 5,
+  "month": "may",
+  "duration": 1042,
+  "campaign": 1,
   "pdays": -1,
   "previous": 0,
   "poutcome": "unknown",
