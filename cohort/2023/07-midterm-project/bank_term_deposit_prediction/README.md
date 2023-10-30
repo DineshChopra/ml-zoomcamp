@@ -91,8 +91,70 @@ In this project, we want to train a model on this dataset in order to predict wh
   ![Model Deployment Test](./images/model_deployment_test.png)
 
 ## 7. Dependency and enviroment management
+Here we are using [pipenv](https://pipenv.pypa.io/en/latest/) virtual environment.
+Pipenv is a Python virtualenv management tool that supports a multitude of systems and nicely bridges the gaps between pip, python (using system python, pyenv or asdf) and virtualenv. Linux, macOS, and Windows are all first-class citizens in pipenv.
+
+Pipenv automatically creates and manages a virtualenv for your projects, as well as adds/removes packages from your Pipfile as you install/uninstall packages. It also generates a project Pipfile.lock, which is used to produce deterministic builds.
+
+Install `pipenv` into your machine
+```bash
+pip install pipenv
+```
+
+Set the python version which you want to use
+```bash
+pipenv install --python 3.10
+```
+
+Install all the dependencies mentioned in [Pipfile](./Pipfile)
+```bash
+pipenv install
+```
+
+Come to `pipenv shell`
+```bash
+pipenv shell
+```
+
+Now you can execute commands for training a model, generating predictions by using web framework like `Flask`, `fastAPI`
 
 ## 8. Containerization
+A `container` is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker `container` image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. [more](https://www.docker.com/resources/what-container/)
+
+* [Dockerfile](./Dockerfile)
+* Start Docker Desktop
+![docker desktop](./images/8_docker_desktop.png)
+
+* Build docker image. [ref](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/05-deployment/06-docker.md)
+```bash
+docker build -t bank-term-deposite:latest .
+```
+![Docker Build](./images/8_docker_build.png)
+
+* Run the docker image. (Before runing docker image we have to stop already runiing web server at 9696 port)
+```bash
+docker run -it -p 9696:9696 bank-term-deposite:latest
+```
+![Docker Run](./images/8_docker_run.png)
+
+* Docker Test by running [predict-test.py](./predict-test.py) file
+![Docker Test](./images/8_docker_test.png)
+
+* Push docker image to docker hub container registry
+  * From Google Chrome
+    * Login to docker hub [link](https://hub.docker.com/)
+    * Create repository `bank-term-deposit`
+  * From terminal
+    * Docker Login
+    * Push docker image to docker hub
+    ```
+    docker login
+
+    docker push dineshchopra/bank-term-deposit:latest
+    ```
+  ![Docker push](./images/8_docker_push.png)
+  ![Docker Hub repository](./images/8_docker_repository.png)
+  
 
 ## 9. Cloud deployment
 

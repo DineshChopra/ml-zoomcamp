@@ -20,6 +20,10 @@ def remove_not_required_fields(customer):
     customer.pop("default")
   return customer  
 
+@app.route('/', methods=['GET'])
+def home():
+  return "Welcome to Bank Term Deposite prediction"
+
 @app.route('/predict', methods=['POST'])
 def predict():
   customer = request.get_json()
