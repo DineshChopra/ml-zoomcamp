@@ -4,14 +4,14 @@
 
 ## Table of Contents:
 1. [Problem description](#1-problem-description)
-2. [Explore dataset Analysis EDA](#2-eda)
-3. [Model training](#3-model-training)
+2. [Explore dataset Analysis EDA](#2-eda-notebook)
+3. [Model training](#3-model-training-notebook)
 4. [Exporting notebook to script](#4-exporting-notebook-to-script)
 5. [Reproducibility](#5-reproducibility)
 6. [Model deployment](#6-model-deployment)
 7. [Dpendency and enviroment management](#7-dependency-and-enviroment-management)
 8. [Containerization](#8-containerization)
-9. [Cloud deployment](#9-cloud-deployment)
+9. [Cloud deployment](#9-cloud-deployment-ref)
 
 ## 1. Problem description
 Bank has multiple banking products that it sells to customer such as saving account, credit cards, investments etc. It wants to which customer will purchase its credit cards. For the same it has various kind of information regarding the demographic details of the customer, their banking behavior etc. Once it can predict the chances that customer will purchase a product, it wants to use the same to make pre-payment to the authors.
