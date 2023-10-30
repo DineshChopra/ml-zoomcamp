@@ -24,7 +24,7 @@ This dataset contains demographic and banking information about customers and al
 
 In this project, we want to train a model on this dataset in order to predict whether after a targeted campaign, a particular customer will subscribed to the product 'term deposit' or not. Since we want our model to predict yes or no, this is a binary classification problem.
 
-## 2. EDA
+## 2. EDA [notebook](./notebook_eda.ipynb)
   * [Kaggle Dataset](https://www.kaggle.com/datasets/aslanahmedov/predict-term-deposit)
   * [wget link](https://raw.githubusercontent.com/DineshChopra/ml-zoomcamp/main/cohort/2023/07-midterm-project/bank_term_deposit_prediction/data/Assignment-2_Data.csv)
 
@@ -32,8 +32,47 @@ In this project, we want to train a model on this dataset in order to predict wh
   !wget https://raw.githubusercontent.com/DineshChopra/ml-zoomcamp/main/cohort/2023/07-midterm-project/bank_term_deposit_prediction/data/Assignment-2_Data.csv
   ```
 
+  * This dataset contains `45211` records with `18` features. Feature details are as Id,	age, job,	marital,	education,	default,	balance,	housing,	loan,	contact,	day,	month,	duration,	campaign,	pdays,	previous,	poutcome,	y,
+  * Here `y` is the target label and rest are the dependent features.
 
-## 3. Model training
+  * Read dataset
+  * Identify outliers in `age` and remove it
+  * Handle null values
+  * Understand `age` distribution
+  * Understand `job` distrubution
+  * Analyze `marital`
+  * Analyze `education`
+  * Analyze `default`
+  * Analyze relationship between `age` and `balance`
+  * Understand relationship between `age` and `loan`
+
+## 3. Model training [notebook](./notebook_model_training.ipynb)
+
+  * Import required Libraries
+  * Read dataset
+  * Split Dataframe into `train`, `val` and `test` sets by using `train_test_split` method of `sklearn.model_selection`
+  * Preprocess dataset
+    * Convert dataframe into dict
+    * Apply one hot coding by using  `DictVectorizer`
+    * Apply normalization by using `StandardScaler`
+  * Resample train dataset
+    * As our data set is unbalnced dataset, so to make it balance we can use `SMOTE`.
+  * Get Model Reports (train accracy, validation accuracy) by passing multiple models
+    * Get best hyperparameters and best estimator by using `GridSearchCV`
+    * Get Model evaluation by finding out best validation accuracy from model reports
+    * [Model Report](./images/model_training_without_smote.png)
+  * Get Best model based on `validation accuracy`
+  * Save artifacts
+    * Create a `pipeline` of `dictVectorizer`, `standardScaler` and `model`
+    * export that pipeline as `artifacts/model.bin` by using `pickle`
+
+  * Best Model without `SMOTE` is `LinearDiscriminantAnalysis`. Model report is:
+    * Model: LDA, train_accuracy: `0.6958`, validation accuracy: `0.7173`
+    * [Best Model](./images/best_model_without_smote.png)
+  
+  * Best model with `SMOTE` is `LogisticRegression` with validation accuracy is `0.84`
+  * [Best Model](./images/model_training_with_smote.png)
+
 
 ## 4. Exporting notebook to script
 

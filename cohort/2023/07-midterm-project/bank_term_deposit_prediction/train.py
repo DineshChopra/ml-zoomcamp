@@ -81,7 +81,8 @@ def read_data(data_file):
   df.dropna(inplace=True)
   not_required_field = [ "Id", "default" ]
   df.drop(columns=not_required_field, inplace=True)
-  df = df[df.age != 999.0]
+  indexes_to_drop = df[(df['age'] == 999.0) | (df['age'] == -1)].index
+  df.drop(indexes_to_drop, inplace=True)
   return df
 
 def split_dataframe(df):
@@ -206,15 +207,17 @@ def get_model_reports(model_infos, X_train, y_train, X_val, y_val):
   model_reports = []
   for model_info in model_infos:
     best_params, best_estimator = get_best_params_and_estimator(model_info, X_train, y_train, X_val, y_val)
-    accuracy = get_model_evaluation(best_estimator, X_val, y_val)
+    train_accuracy = get_model_evaluation(best_estimator, X_train, y_train)
+    val_accuracy = get_model_evaluation(best_estimator, X_val, y_val)
     
-    print(f"Model: {model_info['name']}, accuracy: {accuracy}")
+    print(f"Model: {model_info['name']}, train_accuracy: {train_accuracy}, validation accuracy: {val_accuracy}")
     
     model_report = {
       "name": model_info["name"],
       "model": best_estimator,
       "best_params": best_params,
-      "accuracy": accuracy
+      "train_accuracy": train_accuracy,
+      "val_accuracy": val_accuracy
     }
     model_reports.append(model_report)
 
@@ -230,7 +233,7 @@ def get_best_model_info(model_reports):
   Returns:
     best_model: Best model based on model accuracy
   """
-  sorted_report = sorted(model_reports, key=lambda x: x['accuracy'], reverse=True)
+  sorted_report = sorted(model_reports, key=lambda x: x['val_accuracy'], reverse=True)
   return sorted_report[0]
 
 def save_artifacts(dictVectorizer, standardScaler, model, model_file):
@@ -253,9 +256,11 @@ def run ():
   dv, scaler, X_train, X_val, X_test = pre_process_data(df_train, df_val, df_test)
   X_resampled, y_resampled = resample_train_data(X_train, y_train)
   model_report = get_model_reports(model_infos, X_resampled, y_resampled, X_val, y_val)
+  print('model_report : ', model_report)
   best_model_info = get_best_model_info(model_report)
   print("best_model_info -- ", best_model_info)
   best_model = best_model_info["model"]
+  print("Best Model: ", best_model)
   save_artifacts(dv, scaler, best_model, artifact_file)
 
 if __name__ == "__main__":
