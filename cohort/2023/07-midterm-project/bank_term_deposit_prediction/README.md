@@ -154,9 +154,41 @@ docker run -it -p 9696:9696 bank-term-deposite:latest
     ```
   ![Docker push](./images/8_docker_push.png)
   ![Docker Hub repository](./images/8_docker_repository.png)
-  
 
-## 9. Cloud deployment
+  * Pull docker image and run it
+  ```
+  docker pull dineshchopra/bank-term-deposit:latest
+  ```
+  * Run docker image, which is pulled from docker hub
+  ```
+  docker run -it -p 9696:9696 dineshchopra/bank-term-deposit:latest
+  ```
+
+## 9. Cloud deployment [ref](https://www.youtube.com/watch?v=HGPJ4ekhcLg&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR)
+
+* Installing the ebs cli
+```bash
+pipenv install awsebcli --dev
+pipenv shell
+eb init -p docker -r <region-name> <environment-name>
+
+```
+* Running the eb locally
+```bash
+eb local run --port 9696
+```
+* Deploying the model on aws elastic bean stalk
+```bash
+eb create <environment>
+eb create bank-term-prediction-env
+```
+* Stop ebs
+```bash
+eb terminate bank-term-prediction-env
+```
+
+
+
 
 
 

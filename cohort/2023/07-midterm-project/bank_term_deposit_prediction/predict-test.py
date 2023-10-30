@@ -3,8 +3,8 @@
 
 import requests
 
-
-url = 'http://localhost:9696/predict'
+host = "localhost:9696"
+url = f"http://{host}/predict"
 
 # 44.0	technician	single	secondary	no	29.0	yes	no	unknown	5	may	151	1	-1	0	unknown	
 customer_not_takinig_term_deposit = {
