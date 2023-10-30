@@ -3,15 +3,15 @@
 ![Predict Term Deposit](./images/dataset-cover.png)
 
 ## Table of Contents:
-* 1. [Problem description](#1-problem-description)
-* 2. [Explore dataset Analysis EDA](#2-eda)
-* 3. [Model training](#3-model-training)
-* 4. [Exporting notebook to script](#4-exporting-notebook-to-script)
-* 5. [Reproducibility](#5-reproducibility)
-* 6. [Model deployment](#6-model-deployment)
-* 7. [Dpendency and enviroment management](#7-dependency-and-enviroment-management)
-* 8. [Containerization](#8-containerization)
-* 9. [Cloud deployment](#9-cloud-deployment)
+1. [Problem description](#1-problem-description)
+2. [Explore dataset Analysis EDA](#2-eda)
+3. [Model training](#3-model-training)
+4. [Exporting notebook to script](#4-exporting-notebook-to-script)
+5. [Reproducibility](#5-reproducibility)
+6. [Model deployment](#6-model-deployment)
+7. [Dpendency and enviroment management](#7-dependency-and-enviroment-management)
+8. [Containerization](#8-containerization)
+9. [Cloud deployment](#9-cloud-deployment)
 
 ## 1. Problem description
 Bank has multiple banking products that it sells to customer such as saving account, credit cards, investments etc. It wants to which customer will purchase its credit cards. For the same it has various kind of information regarding the demographic details of the customer, their banking behavior etc. Once it can predict the chances that customer will purchase a product, it wants to use the same to make pre-payment to the authors.
@@ -60,7 +60,7 @@ In this project, we want to train a model on this dataset in order to predict wh
   * Get Model Reports (train accracy, validation accuracy) by passing multiple models
     * Get best hyperparameters and best estimator by using `GridSearchCV`
     * Get Model evaluation by finding out best validation accuracy from model reports
-    * [Model Report](./images/model_training_without_smote.png)
+    * ![Model Report](./images/model_training_without_smote.png)
   * Get Best model based on `validation accuracy`
   * Save artifacts
     * Create a `pipeline` of `dictVectorizer`, `standardScaler` and `model`
@@ -68,10 +68,10 @@ In this project, we want to train a model on this dataset in order to predict wh
 
   * Best Model without `SMOTE` is `LinearDiscriminantAnalysis`. Model report is:
     * Model: LDA, train_accuracy: `0.6958`, validation accuracy: `0.7173`
-    * [Best Model](./images/best_model_without_smote.png)
+    * ![Best Model](./images/best_model_without_smote.png)
   
   * Best model with `SMOTE` is `LogisticRegression` with validation accuracy is `0.84`
-  * [Best Model](./images/model_training_with_smote.png)
+  * ![Best Model](./images/model_training_with_smote.png)
 
 
 ## 4. Exporting notebook to script
