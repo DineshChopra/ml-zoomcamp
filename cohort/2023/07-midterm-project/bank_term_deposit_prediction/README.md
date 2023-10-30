@@ -75,10 +75,20 @@ In this project, we want to train a model on this dataset in order to predict wh
 
 
 ## 4. Exporting notebook to script
+  Logic for taining a model is exported to a script file [train.py](./train.py) file
 
 ## 5. Reproducibility
+  * To execute `EDA` run [notebook](./notebook_eda.ipynb)
+  * To execute model training run [notebook](./notebook_model_training.ipynb) or run python script `train.py` file
 
 ## 6. Model deployment
+  Model is deployed by using `Flask` web framework. Write Flask code into [predict.py](./predict.py) file. It will launch web server at below url: 
+  [http://127.0.0.1:9696](http://127.0.0.1:9696)
+  
+  ![Model Deployment](./images/model_deployment.png)
+
+  Test this model by runing [predict-test.py](predict-test.py) file. Here we have two examples. One negative example, which will not take `Term Deposite` and one with positive case which will take `Term Deposite`
+  ![Model Deployment Test](./images/model_deployment_test.png)
 
 ## 7. Dependency and enviroment management
 
