@@ -170,73 +170,35 @@ docker run -it -p 9696:9696 bank-term-deposite:latest
 ```bash
 pipenv install awsebcli --dev
 pipenv shell
-eb init -p docker -r <region-name> <environment-name>
-
 ```
+* Create elastic bean stalk instance
+```bash
+eb init -p docker -r eu-north-1 bank-term-prediction-env
+```
+![EBS](./images/9.1_create_ebs_instance.png)
+
 * Running the eb locally
 ```bash
 eb local run --port 9696
 ```
+
 * Deploying the model on aws elastic bean stalk
 ```bash
-eb create <environment>
 eb create bank-term-prediction-env
 ```
+![EBS deployment](./images/9.2_ebs_deploy.png)
+
+* Test prediction
+![Test prediction](./images/9.3_test_prediction.png)
+
+* EBS Health
+![Health](./images/9.4_ebs_health.png)
+
+* EBS Monitoring
+![Monitoring](./images/9.5_ebs_monitoring.png)
+
 * Stop ebs
 ```bash
 eb terminate bank-term-prediction-env
 ```
-
-
-
-
-
-
-
--------------------------
-
-Reference project: https://github.com/bhasarma/mlcoursezoom-camp/tree/main/WK08-09-midterm-project/
-
-
-
-## Install dependencies
-```
-pipenv install
-pipenv shell
-```
-## Train best model
-```
-python train.py
-```
-
-## Build docker image [ref](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/05-deployment/06-docker.md)
-```
-docker build -t bank-term-deposite:latest .
-```
-
-## To run it, execute the command below.
-```
-docker run -it -p 9696:9696 bank-term-deposite:latest
-```
-## Create repository in docker hub e.g `bank-term-deposit`
-
-## Publish docker image to docker hub
-```
-docker login
-
-docker push dineshchopra/bank-term-deposit:latest
-```
-
-## Pull docker image and run it
-```
-docker pull dineshchopra/bank-term-deposit:latest
-```
-
-## Run docker image, which is pulled from docker hub
-```
-docker run -it -p 9696:9696 dineshchopra/bank-term-deposit:latest
-```
-
-
-
-
+![Terminate EBS](./images/9.6_ebs_terminate.png)
