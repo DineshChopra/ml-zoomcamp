@@ -171,6 +171,7 @@ docker run -it -p 9696:9696 bank-term-deposite:latest
 pipenv install awsebcli --dev
 pipenv shell
 ```
+
 * Create elastic bean stalk instance
 ```bash
 eb init -p docker -r eu-north-1 bank-term-prediction-env
