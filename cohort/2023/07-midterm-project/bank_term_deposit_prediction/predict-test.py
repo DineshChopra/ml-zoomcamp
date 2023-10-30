@@ -3,7 +3,8 @@
 
 import requests
 
-host = "localhost:9696"
+# host = "localhost:9696"
+host = "bank-term-prediction-env.eba-xk5zwe3v.eu-north-1.elasticbeanstalk.com"
 url = f"http://{host}/predict"
 
 # 44.0	technician	single	secondary	no	29.0	yes	no	unknown	5	may	151	1	-1	0	unknown	
