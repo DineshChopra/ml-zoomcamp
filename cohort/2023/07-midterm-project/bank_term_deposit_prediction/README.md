@@ -24,9 +24,13 @@ This dataset contains demographic and banking information about customers and al
 
 In this project, we want to train a model on this dataset in order to predict whether after a targeted campaign, a particular customer will subscribed to the product 'term deposit' or not. Since we want our model to predict yes or no, this is a binary classification problem.
 
+## Model Training
 ![Model Training](./images/flow_diagram_model_training.png)
 
+
+## Model prediction/deployment
 ![Model deployment](./images/flow_diagram_model_prediction.png)
+
 
 ## 2. EDA [notebook](./notebook_eda.ipynb)
   * [Kaggle Dataset](https://www.kaggle.com/datasets/aslanahmedov/predict-term-deposit)
@@ -211,3 +215,10 @@ eb create bank-term-prediction-env
 eb terminate bank-term-prediction-env
 ```
 ![Terminate EBS](./images/9.6_ebs_terminate.png)
+
+
+
+## References:
+* [Machine Learning Zoomcamp cohort 2023](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/cohorts/2023)
+* [Kaggle Dataset](https://www.kaggle.com/datasets/aslanahmedov/predict-term-deposit)
+
