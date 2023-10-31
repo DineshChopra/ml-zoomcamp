@@ -56,8 +56,6 @@ In this project, we want to train a model on this dataset in order to predict wh
 
 ## 3. Model training [notebook](./notebook_model_training.ipynb)
 
-![Model Training](./images/flow_diagram_model_training.png)
-
   * Import required Libraries
   * Read dataset
   * Split Dataframe into `train`, `val` and `test` sets by using `train_test_split` method of `sklearn.model_selection`
@@ -176,7 +174,7 @@ docker run -it -p 9696:9696 bank-term-deposite:latest
 
 ## 9. Cloud deployment [ref](https://www.youtube.com/watch?v=HGPJ4ekhcLg&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR)
 
-![Model Deployment](./images/flow_diagram_model_training.png)
+![Model Deployment](./images/flow_diagram_model_prediction.png)
 
 * Installing the ebs cli
 ```bash
