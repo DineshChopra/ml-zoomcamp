@@ -25,8 +25,6 @@ This dataset contains demographic and banking information about customers and al
 In this project, we want to train a model on this dataset in order to predict whether after a targeted campaign, a particular customer will subscribed to the product 'term deposit' or not. Since we want our model to predict yes or no, this is a binary classification problem.
 
 ## Model Training
-![Model Training](./images/flow_diagram_model_training.png)
-
 <img src="./images/flow_diagram_model_training.png" width="900" height="600">
 
 
