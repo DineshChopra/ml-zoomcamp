@@ -24,6 +24,10 @@ This dataset contains demographic and banking information about customers and al
 
 In this project, we want to train a model on this dataset in order to predict whether after a targeted campaign, a particular customer will subscribed to the product 'term deposit' or not. Since we want our model to predict yes or no, this is a binary classification problem.
 
+![Model Training](./images/flow_diagram_model_training.png)
+
+![Model deployment](./images/flow_diagram_model_prediction.png)
+
 ## 2. EDA [notebook](./notebook_eda.ipynb)
   * [Kaggle Dataset](https://www.kaggle.com/datasets/aslanahmedov/predict-term-deposit)
   * [wget link](https://raw.githubusercontent.com/DineshChopra/ml-zoomcamp/main/cohort/2023/07-midterm-project/bank_term_deposit_prediction/data/Assignment-2_Data.csv)
@@ -47,6 +51,8 @@ In this project, we want to train a model on this dataset in order to predict wh
   * Understand relationship between `age` and `loan`
 
 ## 3. Model training [notebook](./notebook_model_training.ipynb)
+
+![Model Training](./images/flow_diagram_model_training.png)
 
   * Import required Libraries
   * Read dataset
@@ -165,6 +171,8 @@ docker run -it -p 9696:9696 bank-term-deposite:latest
   ```
 
 ## 9. Cloud deployment [ref](https://www.youtube.com/watch?v=HGPJ4ekhcLg&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR)
+
+![Model Deployment](./images/flow_diagram_model_training.png)
 
 * Installing the ebs cli
 ```bash
