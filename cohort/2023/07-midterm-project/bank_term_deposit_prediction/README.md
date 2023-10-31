@@ -27,7 +27,7 @@ In this project, we want to train a model on this dataset in order to predict wh
 ## Model Training
 ![Model Training](./images/flow_diagram_model_training.png)
 
-<img src="./images/flow_diagram_model_training.png" width="600" height="800">
+<img src="./images/flow_diagram_model_training.png" width="700" height="750">
 
 
 ## Model prediction/deployment
